@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="₿ Crypto Dashboard">
+
+        <!-- Crypto Tiles -->
+        <div class="slds-grid slds-var-p-around_small slds-gutters slds-wrap">
+            <template for:each={top5Cryptos} for:item="cryptoCoin">
+                <c-crypto-tile
+                    key={cryptoCoin.id}
+                    name={cryptoCoin.name}
+                    symbol={cryptoCoin.symbol}
+                    current-price={cryptoCoin.current_price}
+                    price-change-percentage={cryptoCoin.price_change_percentage_24h}
+                    class="slds-col slds-size_1-of-1 slds-small-size_1-of-2 slds-medium-size_1-of-2 slds-large-size_1-of-5 slds-var-m-vertical_x-small"
+                    style="min-width: fit-content;"
+                ></c-crypto-tile>
+            </template>
+        </div>
+
+        <!-- Crypto Graphs -->
+        <div class="slds-grid slds-wrap slds-grid_align-spread slds-var-p-around_small slds-gutters">
+            <!-- Bitcoin Vs Ethereum - Last 7 Days -->
+            <div class="slds-size_12-of-12 slds-medium-size_6-of-12 slds-var-m-vertical_small slds-col">
+                <div class="slds-box">
+                    <lightning-card title="Bitcoin Vs Ethereum - Last 7 Days">
+                        <div class="line-chart">
+                            <canvas lwc:dom="manual"></canvas>
+                        </div>
+                    </lightning-card>
+                </div>
+            </div>
+
+            <!-- Market Cap - Top 5 Coins -->
+            <div class="slds-size_12-of-12 slds-medium-size_6-of-12 slds-var-m-vertical_small slds-col">
+                <div class="slds-box">
+                    <lightning-card title="Market Cap - Top 5 Coins">
+                        <div class="bar-chart">
+                            <canvas lwc:dom="manual"></canvas>
+                        </div>
+                    </lightning-card>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

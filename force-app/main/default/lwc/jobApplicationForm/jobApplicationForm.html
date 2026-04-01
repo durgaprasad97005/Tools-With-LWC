@@ -1,0 +1,87 @@
+<template>
+    <lightning-card title="Job Application Form" icon-name="standard:note">
+        <!-- FullName -->
+        <div class="slds-p-horizontal_medium">
+            <lightning-input 
+                type="text" 
+                label="Full Name" 
+                placeholder="Enter your full name here..." 
+                minlength="3"
+                message-when-too-short="Name must be at least 3 characters" 
+                required
+            ></lightning-input>
+        </div>
+
+        <!-- Email -->
+        <div class="slds-p-horizontal_medium">
+            <lightning-input 
+                type="email" 
+                label="Email" 
+                placeholder="Enter your email here..."
+                message-when-type-mismatch="Enter a valid email address" 
+                required
+            ></lightning-input>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="slds-p-horizontal_medium">
+            <lightning-input 
+                type="tel" 
+                label="Phone Number" 
+                placeholder="Enter your phone number here..."
+                value={phoneNumber}
+                onblur={handlePhoneNumberBlur}
+                pattern="^[0-9]{10}$"
+                message-when-pattern-mismatch="Enter a 10-digit phone number"
+                required
+            ></lightning-input>
+        </div>
+
+        <!-- Years of Experience -->
+        <div class="slds-p-horizontal_medium">
+            <lightning-input 
+                type="number" 
+                label="Years of Experience"
+                placeholder="Enter your years of experience here..." 
+                min="0" 
+                max="50"
+                message-when-range-overflow="Must be 50 or less" 
+                message-when-step-mismatch="Enter a whole number"
+                required
+            ></lightning-input>
+        </div>
+
+        <!-- LinkedIn Profile URL -->
+        <div class="slds-p-horizontal_medium">
+            <lightning-input 
+                type="url" 
+                label="LinkedIn Profile (optional)" 
+                name="input3"
+                placeholder="Enter your LinkedIn profile URL here..."
+                message-when-type-mismatch="Enter a valid URL starting with http or https"
+            ></lightning-input>
+        </div>
+
+        <!-- Cover Letter -->
+        <div class="slds-p-horizontal_medium">
+            <lightning-textarea 
+                placeholder="Enter something more about yourself here..." 
+                label="Cover Letter" 
+                minlength="100"
+                maxlength="500" 
+                message-when-too-short="Cover letter must be atleast 100 characters." 
+                required
+            ></lightning-textarea>
+        </div>
+
+        <!-- Button -->
+        <div class="slds-p-around_medium">
+            <lightning-button 
+                variant="brand" 
+                label="Submit Application"
+                onclick={handleClick}
+            ></lightning-button>
+        </div>
+
+    </lightning-card>
+</template>

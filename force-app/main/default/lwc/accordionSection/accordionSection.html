@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-box slds-m-vertical_small">
+        <!-- Question -->
+        <div class="slds-grid slds-grid_align-spread">
+            <p class="slds-text-heading_small">
+                <b>{question}</b>
+            </p>
+
+            <lightning-icon 
+                icon-name={addIcon}
+                size="x-small"
+                onclick={handleClick}
+            ></lightning-icon>
+        </div>
+
+        <!-- Answer -->
+        <div class={showAnswer}>{answer}</div>
+    </div>
+</template>

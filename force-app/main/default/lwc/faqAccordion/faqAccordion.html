@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="FAQs - Frequently Asked Questions" icon-name="action:add_file">
+        <div class="slds-container_medium slds-container_center slds-p-around_medium">
+            <!-- Toggle Button -->
+            <div>
+                <lightning-input 
+                    type="toggle" 
+                    label="Allow only one FAQ open at a time" 
+                    name="input1"
+                    onchange={handleToggle}
+                ></lightning-input>
+            </div>
+
+            <!-- FAQs -->
+            <template for:each={faqs} for:item="faq">
+                <c-accordion-section 
+                    key={faq.id}
+                    name={faq.id}
+                    question={faq.question}
+                    answer={faq.answer}
+                    show-plus={faq.showPlus}
+                    oniconclick={handleIconClick}
+                ></c-accordion-section>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "d:/Nyros Technologies/Practice Salesforce Projects/ToolsWithLWC"
+    }
+  ],
+  "settings": {
+    "eslint.workingDirectories": [
+      "d:/Nyros Technologies/Practice Salesforce Projects/ToolsWithLWC"
+    ],
+    "eslint.validate": [
+      "javascript",
+      "typescript"
+    ],
+    "eslint.options": {
+      "overrideConfigFile": "d:\\Nyros Technologies\\Practice Salesforce Projects\\ToolsWithLWC\\.eslintrc.json"
+    }
+  }
+}
